@@ -1,4 +1,4 @@
-#ifndef TRAYMENU_H
+﻿#ifndef TRAYMENU_H
 #define TRAYMENU_H
 
 #include <QObject>
@@ -13,20 +13,16 @@ public:
     explicit TrayMenu(QWidget *parent = nullptr);
 
 signals:
-    void sigShow();
-    void sigSetting();
-    void sigHelp();
-    void sigAbout();
+    void sigPick();
     void sigQuit();
+    void sigShow();
 
 private:
     void initActions();
     void initConnect();
 
+    QAction *pickAction;
     QAction *showAction;
-    QAction *settingAction;
-    QAction *helpAction;
-    QAction *aboutAction;
     QAction *quitAction;
 };
 

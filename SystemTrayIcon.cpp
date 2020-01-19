@@ -1,4 +1,4 @@
-#include <QEvent>
+﻿#include <QEvent>
 #include <QDebug>
 #include "SystemTrayIcon.h"
 
@@ -23,17 +23,6 @@ void SystemTrayIcon::initTrayMenu()
 void SystemTrayIcon::initConnect()
 {
     connect(trayMenu, &TrayMenu::sigShow, this, &SystemTrayIcon::sigShow);
-    connect(trayMenu, &TrayMenu::sigSetting, this, &SystemTrayIcon::sigSetting);
-    connect(trayMenu, &TrayMenu::sigHelp, this, &SystemTrayIcon::sigHelp);
-    connect(trayMenu, &TrayMenu::sigAbout, this, &SystemTrayIcon::sigAbout);
+    connect(trayMenu, &TrayMenu::sigPick, this, &SystemTrayIcon::sigPick);
     connect(trayMenu, &TrayMenu::sigQuit, this, &SystemTrayIcon::sigQuit);
-    connect(this, &QSystemTrayIcon::activated, this, &SystemTrayIcon::slotOnTrayIconActivated);
-}
-
-void SystemTrayIcon::slotOnTrayIconActivated(QSystemTrayIcon::ActivationReason reason)
-{
-    if (QSystemTrayIcon::Trigger == reason)
-    {
-        emit sigTriggerShow();
-    }
 }

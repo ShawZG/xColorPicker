@@ -1,4 +1,4 @@
-#ifndef SYSTEMTRAYICON_H
+﻿#ifndef SYSTEMTRAYICON_H
 #define SYSTEMTRAYICON_H
 
 #include <QObject>
@@ -14,14 +14,8 @@ public:
 
 signals:
     void sigShow();
-    void sigTriggerShow();
-    void sigSetting();
-    void sigHelp();
-    void sigAbout();
+    void sigPick();
     void sigQuit();
-
-private slots:
-    void slotOnTrayIconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:
     void initTrayMenu();

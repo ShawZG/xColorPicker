@@ -16,18 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ColorIndicator.cpp \
+    ColorIndicatorLabel.cpp \
+    ColorLabel.cpp \
+    ColorPickerWidget.cpp \
+    ColorSlider.cpp \
+    CommonHelper.cpp \
     SystemTrayIcon.cpp \
     TrayMenu.cpp \
     main.cpp \
     MainDialog.cpp
 
 HEADERS += \
+    ColorIndicator.h \
+    ColorIndicatorLabel.h \
+    ColorLabel.h \
+    ColorPickerWidget.h \
+    ColorSlider.h \
+    CommonHelper.h \
     MainDialog.h \
     SystemTrayIcon.h \
     TrayMenu.h
-
-FORMS += \
-    MainDialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -36,3 +45,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resource/Res.qrc
+
+TRANSLATIONS += english.ts \
+                simplified_chinese.ts

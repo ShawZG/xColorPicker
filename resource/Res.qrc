@@ -1,5 +1,17 @@
 <RCC>
     <qresource prefix="/images">
         <file>app_logo.png</file>
+        <file>menu_pick.png</file>
+        <file>menu_quit.png</file>
+        <file>menu_show.png</file>
+        <file>btn_copy.png</file>
+        <file>btn_pick.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>qss_default.qss</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>english.qm</file>
+        <file>simplified_chinese.qm</file>
     </qresource>
 </RCC>
