@@ -1,0 +1,84 @@
+﻿QDialog#mainDialog {
+    background: #FAFAFA;
+}
+
+QLineEdit {
+    border: 1px solid #D2D2D2;
+    border-radius: 3px;
+    font-size: 12px;
+    background: #F7F7F7;
+}
+QLineEdit:focus {
+    border: 2px solid #00C3FF;
+}
+
+QPushButton#pickButton {
+    font-size: 12px;
+    color: white;
+    border-radius: 3px;
+    background-color: #00AEFF;
+}
+QPushButton#pickButton:hover {
+    background-color: #0096E3;
+}
+
+QPushButton#copyColorButton {
+    font-size: 12px;
+    color: white;
+    border-radius: 3px;
+    background-color: #00AEFF;
+}
+QPushButton#copyColorButton:hover {
+    background-color: #0096E3;
+}
+
+QLabel#feedbackLabel{
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+}
+
+ColorSlider#redColorSlider QSlider::handle:horizontal{
+     width: 17px;
+     margin: -5px 0px -5px 0px;
+     border-radius: 8px;
+     background-color: #FF0000;
+}
+ColorSlider#redColorSlider QSlider::groove:horizontal {
+    border: 0px solid #999999;
+    border-radius: 2px;
+    height: 7px;
+    left: 0px;
+    right: 0px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2: 0, stop:0 #FFFFFF, stop:1 #FF0000);
+}
+
+ColorSlider#greenColorSlider QSlider::handle:horizontal{
+     width: 17px;
+     margin: -5px 0px -5px 0px;
+     border-radius: 8px;
+     background-color: #00FF00;
+}
+ColorSlider#greenColorSlider QSlider::groove:horizontal {
+    border: 0px solid #999999;
+    border-radius: 2px;
+    height: 7px;
+    left: 0px;
+    right: 0px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2: 0, stop:0 #FFFFFF, stop:1 #00FF00);
+}
+
+ColorSlider#blueColorSlider QSlider::handle:horizontal{
+     width: 17px;
+     margin: -5px 0px -5px 0px;
+     border-radius: 8px;
+     background-color: #0000FF;
+}
+ColorSlider#blueColorSlider QSlider::groove:horizontal {
+    border: 0px solid #999999;
+    border-radius: 2px;
+    height: 7px;
+    left: 0px;
+    right: 0px;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2: 0, stop:0 #FFFFFF, stop:1 #0000FF);
+}
