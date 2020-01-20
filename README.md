@@ -6,6 +6,7 @@ pick color in windows screen
 2. MinGW 64-bit
 3. Win10 Qt Creator
 
+You can visit my [blog](https://blog.csdn.net/shawzg/article/details/104041896) for more information. 
 
 ![pick_color](https://github.com/ShawZG/XColorPicker/tree/master/images/pick_color.gif)
 
