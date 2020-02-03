@@ -13,6 +13,7 @@
 <context>
     <name>MainDialog</name>
     <message>
+<<<<<<< HEAD
         <source>XColorPicker</source>
         <translatorcomment>XColorPicker</translatorcomment>
         <translation type="vanished">XColorPicker</translation>
@@ -131,24 +132,51 @@
     </message>
     <message>
         <location filename="StackPickerFrame.cpp" line="127"/>
+=======
+        <location filename="MainDialog.cpp" line="67"/>
+        <source>XColorPicker</source>
+        <translatorcomment>XColorPicker</translatorcomment>
+        <translation>XColorPicker</translation>
+    </message>
+    <message>
+        <location filename="MainDialog.cpp" line="115"/>
+        <source>Author: blueshaw@163.com</source>
+        <translatorcomment>作者：blueshaw@163.com</translatorcomment>
+        <translation>作者：blueshaw@163.com</translation>
+    </message>
+    <message>
+        <location filename="MainDialog.cpp" line="128"/>
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
         <source>Pick</source>
         <translatorcomment>取色</translatorcomment>
         <translation>取色</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="StackPickerFrame.cpp" line="128"/>
+=======
+        <location filename="MainDialog.cpp" line="129"/>
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
         <source>Picker color</source>
         <translatorcomment>取色</translatorcomment>
         <translation>取色</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="StackPickerFrame.cpp" line="132"/>
+=======
+        <location filename="MainDialog.cpp" line="133"/>
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
         <source>Copy</source>
         <translatorcomment>复制</translatorcomment>
         <translation>复制</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="StackPickerFrame.cpp" line="133"/>
+=======
+        <location filename="MainDialog.cpp" line="134"/>
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
         <source>Copy to clip</source>
         <translatorcomment>复制到剪切板</translatorcomment>
         <translation>复制到剪切板</translation>

@@ -6,10 +6,13 @@
         <file>menu_show.png</file>
         <file>btn_copy.png</file>
         <file>btn_pick.png</file>
+<<<<<<< HEAD
         <file>btn_setting.png</file>
         <file>language_english.png</file>
         <file>language_simplified_chinese.png</file>
         <file>btn_return.png</file>
+=======
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
     </qresource>
     <qresource prefix="/qss">
         <file>qss_default.qss</file>

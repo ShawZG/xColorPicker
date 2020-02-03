@@ -60,4 +60,7 @@ void ColorIndicator::initUI()
 void ColorIndicator::initConnect()
 {
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
