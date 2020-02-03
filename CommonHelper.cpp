@@ -1,8 +1,9 @@
 ﻿#include <QFile>
 #include <QApplication>
-//#include <QTranslator>
 #include <QDebug>
 #include "CommonHelper.h"
+
+QTranslator* CommonHelper::translator = new QTranslator();
 
 CommonHelper::CommonHelper(QObject *parent) : QObject(parent)
 {
@@ -18,19 +19,10 @@ void CommonHelper::setStyle(const QString &style)
     }
 }
 
-bool CommonHelper::setLanguage(QTranslator *translator, Language language)
+bool CommonHelper::setLanguage(QString language)
 {
-    QString path;
-    switch (language) {
-    case Chinese:
-        path = ":/language/simplified_chinese.qm";
-        break;
-    case English:
-        path = ":/language/english.qm"   ;
-        break;
-    }
-
-    if (true == translator->load(path)) {
+    QString path = QString(":/language/%1.qm").arg(language);
+    if (true == CommonHelper::translator ->load(path)) {
         return qApp->installTranslator(translator);
     }
     else {

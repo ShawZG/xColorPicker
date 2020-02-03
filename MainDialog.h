@@ -4,15 +4,10 @@
 #include <QDialog>
 
 class QLabel;
-class QPushButton;
 class SystemTrayIcon;
-class QFrame;
-class QSlider;
-class QLineEdit;
-class QLayout;
-class ColorSlider;
-class ColorIndicator;
-class ColorPickerWidget;
+class QLabel;
+class StackPickerFrame;
+class StackConfigFrame;
 
 class MainDialog : public QDialog
 {
@@ -21,34 +16,20 @@ public:
     MainDialog(QWidget *parent = nullptr);
     ~MainDialog();
 
+    void showConfigWidget();
+    void showPickerWidget();
+
 protected:
     void closeEvent(QCloseEvent *event);
-
-private slots:
-    void slotPickColor();
-    void slotSetColorIndicator();
-    void slotSetColorPicked(QColor color);
 
 private:
     void initConnect();
     void initUI();
     void initSystemTrayIcon();
-    void initColorPickWidget();
-    QLayout* initColorSliderLayout();
-    QLayout* initColorIndicatorLayout();
-    QLayout* initFeedbackLayout();
-    QLayout* initButtonsLayout();
 
-    QFrame          *mainFrame = nullptr;
-    ColorSlider     *redColorSlider = nullptr;
-    ColorSlider     *greenColorSlider = nullptr;
-    ColorSlider     *blueColorSlider = nullptr;
+    SystemTrayIcon      *sysTrayIcon = nullptr;
 
-    ColorIndicator  *colorIndicator = nullptr;
-    QPushButton     *pickButton = nullptr;
-    QPushButton     *copyColorButton = nullptr;
-
-    SystemTrayIcon  *sysTrayIcon = nullptr;
-    ColorPickerWidget *colorPickWidget = nullptr;
+    StackPickerFrame    *stackPickerFrame = nullptr;
+    StackConfigFrame    *stackConfigFrame = nullptr;
 };
 #endif // MAINDIALOG_H

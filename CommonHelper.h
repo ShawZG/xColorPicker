@@ -10,10 +10,11 @@ class CommonHelper : public QObject
 public:
     explicit CommonHelper(QObject *parent = nullptr);
 
-    enum Language {Chinese, English};
-
     static void setStyle(const QString &style);
-    static bool setLanguage(QTranslator *translator, Language language);
+    static bool setLanguage(QString language);
+
+private:
+    static QTranslator *translator;
 };
 
 #endif // COMMONHELPER_H

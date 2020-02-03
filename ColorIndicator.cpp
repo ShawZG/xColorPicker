@@ -60,3 +60,4 @@ void ColorIndicator::initUI()
 void ColorIndicator::initConnect()
 {
 }
+

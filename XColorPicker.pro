@@ -16,18 +16,22 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AppConfig.cpp \
     ColorIndicator.cpp \
     ColorIndicatorLabel.cpp \
     ColorLabel.cpp \
     ColorPickerWidget.cpp \
     ColorSlider.cpp \
     CommonHelper.cpp \
+    StackConfigFrame.cpp \
+    StackPickerFrame.cpp \
     SystemTrayIcon.cpp \
     TrayMenu.cpp \
     main.cpp \
     MainDialog.cpp
 
 HEADERS += \
+    AppConfig.h \
     ColorIndicator.h \
     ColorIndicatorLabel.h \
     ColorLabel.h \
@@ -35,6 +39,8 @@ HEADERS += \
     ColorSlider.h \
     CommonHelper.h \
     MainDialog.h \
+    StackConfigFrame.h \
+    StackPickerFrame.h \
     SystemTrayIcon.h \
     TrayMenu.h
 

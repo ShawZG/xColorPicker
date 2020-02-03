@@ -4,6 +4,7 @@
 #include <QIcon>
 #include <QTranslator>
 #include "CommonHelper.h"
+#include "AppConfig.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,10 +14,8 @@ int main(int argc, char *argv[])
 #elif Q_OS_LINUX
 #elif Q_OS_MACOS
 #endif
-    CommonHelper::setStyle(":/qss/qss_default.qss");
-    QTranslator *translator = new QTranslator();
-    CommonHelper::setLanguage(translator, CommonHelper::Chinese);
-
+    CommonHelper::setStyle(QString(":/qss/qss_%1.qss").arg(AppConfig::getSkin()));
+    CommonHelper::setLanguage(AppConfig::getLanguage());
     MainDialog w;
     w.show();
 
