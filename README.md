@@ -15,7 +15,8 @@ You can visit my [blog](https://blog.csdn.net/shawzg/article/details/104041896) 
 ![tray_icon.gif](https://github.com/ShawZG/XColorPicker/tree/master/images/tray_icon.gif)
 
 update v1.1.0 on 2020/02/03
-1. finish custom settings.
+1. finished custom settings, including language and skin.
+
 ![v1.1.0_1](https://github.com/ShawZG/XColorPicker/tree/master/images/v1.1.0_1.jpg)
 
 ![v1.1.0_2](https://github.com/ShawZG/XColorPicker/tree/master/images/v1.1.0_2.jpg)
