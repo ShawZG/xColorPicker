@@ -32,7 +32,6 @@ QPushButton#copyColorButton:hover {
     background-color: #0096E3;
 }
 
-<<<<<<< HEAD
 QPushButton#returnButton {
     font-size: 12px;
     color: white;
@@ -51,8 +50,6 @@ QPushButton#settingButton:hover {
     background-color: #0096E3;
 }
 
-=======
->>>>>>> 4da7d9fe7b6f3bd9228dbcf5380533f8a39c9e1f
 QLabel#feedbackLabel{
     font-size: 12px;
     color: black;
