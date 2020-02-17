@@ -12,7 +12,6 @@
 ColorPickerWidget::ColorPickerWidget(QWidget *parent) : QWidget(parent)
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Tool);
-    setAttribute(Qt::WA_TranslucentBackground, true);
     setMouseTracking(true);
 
     paintCursorShapeTimer = new QTimer(this);
@@ -27,7 +26,6 @@ ColorPickerWidget::~ColorPickerWidget()
 
 void ColorPickerWidget::slotPickColor()
 {
-    //setCursor(Qt::CrossCursor);
     QScreen *curScreen = QGuiApplication::screenAt(mapToGlobal(QPoint(0,0)));
     resize(curScreen->size());
     move(0, 0);
@@ -37,7 +35,10 @@ void ColorPickerWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event);
     QPainter painter(this);
-    painter.fillRect(rect(),QColor(255, 255, 255, 1));
+
+    QScreen *curScreen = QGuiApplication::screenAt(mapToGlobal(QPoint(0,0)));
+    grabPixmap = curScreen->grabWindow(QApplication::desktop()->winId());
+    painter.drawPixmap(rect(), grabPixmap);
 }
 
 void ColorPickerWidget::mouseMoveEvent(QMouseEvent *event)
@@ -58,12 +59,12 @@ void ColorPickerWidget::mousePressEvent(QMouseEvent *event)
         /* On Windows Vista and above grabbing a layered window,
          * which is created by setting the Qt::WA_TranslucentBackground attribute,
          * will not work. Instead grabbing the desktop widget should work. */
-        QScreen *curScreen = QGuiApplication::screenAt(mapToGlobal(QPoint(0,0)));
-        QPixmap pixmap = curScreen->grabWindow(QApplication::desktop()->winId(), event->x(), event->y(), 1, 1);
-        QColor color = pixmap.toImage().pixelColor(0, 0);
-        /* 去掉透明度的影响 */
+//        QScreen *curScreen = QGuiApplication::screenAt(mapToGlobal(QPoint(0,0)));
+//        QPixmap pixmap = curScreen->grabWindow(QApplication::desktop()->winId(), event->x(), event->y(), 1, 1);
+
+        QColor color = grabPixmap.copy(event->x(), event->y(), 1, 1).toImage().pixelColor(0, 0);
         hide();
-        emit sigColorPicked(QColor(color.red()-1, color.green()-1, color.blue()-1));
+        emit sigColorPicked(QColor(color.red(), color.green(), color.blue()));
     }
     else /*if (Qt::RightButton == event->button())*/
     {
@@ -84,20 +85,21 @@ void ColorPickerWidget::setCursorShape()
     // Get image under cursor.
     int devicePixelRatio = static_cast<int>(curScreen->devicePixelRatio());
     int size = screenshotSize / devicePixelRatio;
-    QPixmap pixmap = curScreen->grabWindow(QApplication::desktop()->winId(),
-                                           cursorX - size / 2,
-                                           cursorY - size / 2,
-                                           size, size);
+
+    QPixmap pixmap = grabPixmap.copy(cursorX - size / 2, cursorY - size / 2, size, size);
+
+//    QPixmap pixmap = curScreen->grabWindow(QApplication::desktop()->winId(),
+//                                           cursorX - size / 2,
+//                                           cursorY - size / 2,
+//                                           size, size);
     pixmap = pixmap.scaled(magnifierWidth * devicePixelRatio, magnifierHeight * devicePixelRatio);
     QPainter painter(&pixmap);
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setOpacity(0.7);
-    painter.setPen(QPen(QColor(255, 255, 255), 3));
+    painter.setPen(QPen(QColor(255, 255, 255), 2));
     QLine xLine(QPoint(0, 0), QPoint(magnifierWidth -1, 0));
     QLine yLine(QPoint(0, 0), QPoint(0, magnifierHeight - 1));
     painter.drawLine(xLine.translated(0, magnifierHeight / 2));
     painter.drawLine(yLine.translated(magnifierWidth / 2, 0));
-    painter.setOpacity(1);
     painter.setPen(QPen(QColor(255, 255, 255), 2));
     painter.drawRect(QRect(0, 0, magnifierWidth, magnifierHeight));
 

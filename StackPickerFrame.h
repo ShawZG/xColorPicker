@@ -44,7 +44,6 @@ private:
     ColorIndicator  *colorIndicator = nullptr;
     QPushButton     *pickButton = nullptr;
     QPushButton     *copyColorButton = nullptr;
-
     QPushButton     *settingButton = nullptr;
 
     ColorPickerWidget *colorPickWidget = nullptr;

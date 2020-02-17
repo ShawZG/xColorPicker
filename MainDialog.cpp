@@ -43,6 +43,10 @@ void MainDialog::closeEvent(QCloseEvent *event)
         event->ignore();
         hide();
     }
+    else
+    {
+        QDialog::closeEvent(event);
+    }
 }
 
 void MainDialog::initUI()
