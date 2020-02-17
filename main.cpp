@@ -9,10 +9,10 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-#ifdef Q_OS_WIN
+#if defined(Q_OS_WIN)
     a.setWindowIcon(QIcon(":/images/app_logo.png"));
-#elif Q_OS_LINUX
-#elif Q_OS_MACOS
+#elif defined(Q_OS_LINUX)
+#elif defined(Q_OS_MACOS)
 #endif
     CommonHelper::setStyle(QString(":/qss/qss_%1.qss").arg(AppConfig::getSkin()));
     CommonHelper::setLanguage(AppConfig::getLanguage());

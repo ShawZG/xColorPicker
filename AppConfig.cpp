@@ -4,7 +4,7 @@
 #include "CommonHelper.h"
 #include "AppConfig.h"
 
-QString AppConfig::appVer = "v1.1.0";
+QString AppConfig::appVer = "v1.2.0";
 QSettings* AppConfig::setting = nullptr;
 QString AppConfig::skin = "";
 QString AppConfig::language = "";
@@ -27,14 +27,13 @@ QString AppConfig::getSkin()
     return AppConfig::setting->value("skin", QString("default")).toString();
 }
 
-#include <QDebug>
 void AppConfig::setLanguage(QString language)
 {
     if (nullptr == AppConfig::setting) {AppConfig::loadConfig();}
     AppConfig::setting->setValue("language", language);
     AppConfig::setting->sync();
 
-    qDebug() << CommonHelper::setLanguage(language);
+    CommonHelper::setLanguage(language);
 }
 
 QString AppConfig::getLanguage()
@@ -56,7 +55,6 @@ QString AppConfig::getExit()
     return AppConfig::setting->value("exit", QString("hide")).toString();
 }
 
-#include <QDebug>
 void AppConfig::loadConfig()
 {
     QString dirPath = QApplication::applicationDirPath();
@@ -70,7 +68,6 @@ void AppConfig::loadConfig()
 //    }
 
     AppConfig::setting = new QSettings(filePath, QSettings::IniFormat);
-    qDebug() << filePath;
     /*
     do not need function saveConfig, because QSettings::sync() is called automatically from QSettings's destructor
     and by the event loop at regular intervals, so you normally don't need to call it yourself.

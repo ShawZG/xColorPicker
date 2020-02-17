@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class QTimer;
+class QPixmap;
 
 class ColorPickerWidget : public QWidget
 {
@@ -28,6 +29,7 @@ private:
     void setCursorShape();
 
     QTimer *paintCursorShapeTimer = nullptr;
+    QPixmap grabPixmap;
 };
 
 #endif // COLORPICKERWIDGET_H

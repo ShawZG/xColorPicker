@@ -7,6 +7,7 @@
 #include <QGridLayout>
 #include <QPushButton>
 #include <QApplication>
+#include <QTimer>
 #include <QEvent>
 #include "SystemTrayIcon.h"
 #include "ColorLabel.h"
@@ -60,7 +61,7 @@ void StackPickerFrame::initConnect()
     connect(copyColorButton, &QPushButton::clicked, colorIndicator, &ColorIndicator::slotCopyToClip);
 
     connect(colorPickWidget, &ColorPickerWidget::sigColorPicked, this, &StackPickerFrame::slotSetColorPicked);
-    connect(colorPickWidget, &ColorPickerWidget::sigCancelPicked, [this](){this->colorPickWidget->hide(); this->show();});
+    connect(colorPickWidget, &ColorPickerWidget::sigCancelPicked, [this](){this->colorPickWidget->hide(); this->parentWidget()->show();});
 
     connect(settingButton, &QPushButton::clicked, this, &StackPickerFrame::slotShowConfigWidget);
 }
@@ -146,8 +147,8 @@ QLayout *StackPickerFrame::initButtonsLayout()
 void StackPickerFrame::slotPickColor()
 {
     parentWidget()->hide();
-    colorPickWidget->slotPickColor();
-    colorPickWidget->show();
+    /*use timer to hide maindialog */
+    QTimer::singleShot(150, [this](){ this->colorPickWidget->slotPickColor(); colorPickWidget->showFullScreen();});
 }
 
 void StackPickerFrame::slotSetColorIndicator()
