@@ -1,0 +1,3 @@
+build/release/bin/xcolorpicker usr/bin
+data/xcolorpicker.desktop usr/share/applications
+data/xcolorpicker.svg usr/share/pixmaps

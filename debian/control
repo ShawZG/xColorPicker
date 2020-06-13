@@ -1,0 +1,14 @@
+Source: xcolorpicker
+Section: free
+Priority: optional
+Maintainer: ZhiGuo Xiao <blueshaw@163.com>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.1.3
+Homepage: https://github.com/ShawZG/XColorPicker
+Vcs-Browser: https://github.com/ShawZG/XColorPicker
+Vcs-Git: https://github.com/ShawZG/XColorPicker.git
+
+Package: xcolorpicker
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: a small desktop applicaton to pick color by hex value.

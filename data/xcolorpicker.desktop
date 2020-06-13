@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Application;Utility;
+Comment=a small desktop application to pick color by hex value
+Exec=/usr/bin/xcolorpicker
+GenericName=xcolorpicker
+Icon=/usr/share/pixmaps/xcolorpicker.svg
+Name=xcolorpicker
+Terminal=false
+Type=Application
+X-Deepin-Vendor=user-custom

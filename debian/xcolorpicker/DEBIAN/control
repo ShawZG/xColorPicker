@@ -1,0 +1,10 @@
+Package: xcolorpicker
+Version: 1.2.0
+Architecture: amd64
+Maintainer: ZhiGuo Xiao <blueshaw@163.com>
+Installed-Size: 146
+Depends: libc6 (>= 2.2.5), libgcc1 (>= 1:3.0), libgl1, libqt5core5a (>= 5.11.0~rc1), libqt5gui5 (>= 5.10.0), libqt5widgets5 (>= 5.2.0~alpha1), libstdc++6 (>= 4.1.1)
+Section: free
+Priority: optional
+Homepage: https://github.com/ShawZG/XColorPicker
+Description: a small desktop applicaton to pick color by hex value.
