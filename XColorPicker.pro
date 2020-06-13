@@ -15,42 +15,52 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+TARGET = xcolorpicker
+
 SOURCES += \
-    AppConfig.cpp \
-    ColorIndicator.cpp \
-    ColorIndicatorLabel.cpp \
-    ColorLabel.cpp \
-    ColorPickerWidget.cpp \
-    ColorSlider.cpp \
-    CommonHelper.cpp \
-    StackConfigFrame.cpp \
-    StackPickerFrame.cpp \
-    SystemTrayIcon.cpp \
-    TrayMenu.cpp \
-    main.cpp \
-    MainDialog.cpp
+    src/AppConfig.cpp \
+    src/ColorIndicator.cpp \
+    src/ColorIndicatorLabel.cpp \
+    src/ColorLabel.cpp \
+    src/ColorPickerWidget.cpp \
+    src/ColorSlider.cpp \
+    src/CommonHelper.cpp \
+    src/StackConfigFrame.cpp \
+    src/StackPickerFrame.cpp \
+    src/SystemTrayIcon.cpp \
+    src/TrayMenu.cpp \
+    src/main.cpp \
+    src/MainDialog.cpp
 
 HEADERS += \
-    AppConfig.h \
-    ColorIndicator.h \
-    ColorIndicatorLabel.h \
-    ColorLabel.h \
-    ColorPickerWidget.h \
-    ColorSlider.h \
-    CommonHelper.h \
-    MainDialog.h \
-    StackConfigFrame.h \
-    StackPickerFrame.h \
-    SystemTrayIcon.h \
-    TrayMenu.h
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+    src/AppConfig.h \
+    src/ColorIndicator.h \
+    src/ColorIndicatorLabel.h \
+    src/ColorLabel.h \
+    src/ColorPickerWidget.h \
+    src/ColorSlider.h \
+    src/CommonHelper.h \
+    src/MainDialog.h \
+    src/StackConfigFrame.h \
+    src/StackPickerFrame.h \
+    src/SystemTrayIcon.h \
+    src/TrayMenu.h
 
 RESOURCES += \
-    resource/Res.qrc
+    src/resource/Res.qrc
 
 TRANSLATIONS += english.ts \
                 simplified_chinese.ts
+
+CONFIG(debug, debug|release) {
+    BUILD_MODE = debug
+} else {
+    BUILD_MODE = release
+}
+DESTDIR = $${PWD}/build/$${BUILD_MODE}/bin
+MOC_DIR = $${PWD}/build/$${BUILD_MODE}/moc
+RCC_DIR = $${PWD}/build/$${BUILD_MODE}/rcc
+UI_DIR = $${PWD}/build/$${BUILD_MODE}/ui
+unix:OBJECTS_DIR = $${PWD}/build/$${BUILD_MODE}/obj/unix
+win32:OBJECTS_DIR = $${PWD}/build/$${BUILD_MODE}/obj/win32
+macx:OBJECTS_DIR = $${PWD}/build/$${BUILD_MODE}/obj/mac

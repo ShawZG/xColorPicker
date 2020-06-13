@@ -61,7 +61,10 @@ void StackPickerFrame::initConnect()
     connect(copyColorButton, &QPushButton::clicked, colorIndicator, &ColorIndicator::slotCopyToClip);
 
     connect(colorPickWidget, &ColorPickerWidget::sigColorPicked, this, &StackPickerFrame::slotSetColorPicked);
-    connect(colorPickWidget, &ColorPickerWidget::sigCancelPicked, [this](){this->colorPickWidget->hide(); this->parentWidget()->show();});
+    connect(colorPickWidget, &ColorPickerWidget::sigCancelPicked, [this]() {
+        this->colorPickWidget->hide();
+        this->parentWidget()->show();
+    });
 
     connect(settingButton, &QPushButton::clicked, this, &StackPickerFrame::slotShowConfigWidget);
 }
@@ -148,7 +151,10 @@ void StackPickerFrame::slotPickColor()
 {
     parentWidget()->hide();
     /*use timer to hide maindialog */
-    QTimer::singleShot(150, [this](){ this->colorPickWidget->slotPickColor(); colorPickWidget->showFullScreen();});
+    QTimer::singleShot(150, [this]() {
+        this->colorPickWidget->slotPickColor();
+        colorPickWidget->showFullScreen();
+    });
 }
 
 void StackPickerFrame::slotSetColorIndicator()
@@ -171,6 +177,6 @@ void StackPickerFrame::slotSetColorPicked(QColor color)
 
 void StackPickerFrame::slotShowConfigWidget()
 {
-    MainDialog* mainDialog = dynamic_cast<MainDialog*>(parentWidget());
+    MainDialog *mainDialog = dynamic_cast<MainDialog *>(parentWidget());
     mainDialog->showConfigWidget();
 }

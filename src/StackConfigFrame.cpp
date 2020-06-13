@@ -71,9 +71,11 @@ QLayout *StackConfigFrame::initSkinLayout()
     QLabel *skinLabel = new QLabel(tr("Skin"));
     skinLabel->setFixedSize(80, 24);
     skinLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    skinLabel->hide();
 
     skinComboBox = new QComboBox();
     skinComboBox->addItem(tr("Default"), QString("default"));
+    skinComboBox->hide();
 
     QHBoxLayout *hLayout = new QHBoxLayout();
     hLayout->setContentsMargins(2, 2, 2, 2);
