@@ -30,3 +30,6 @@ You can visit my [blog](https://blog.csdn.net/shawzg/article/details/104041896) 
 1. The project can be compiled and used in DeepinOS(15.11). Do not test on other Linux platform.
 
 ![v1.2.0](https://github.com/ShawZG/XColorPicker/tree/master/images/v1.2.0_win_deepin)
+
+#### update v1.2.1 on 2020/06/13
+1. Adjust project dir, so you can build deb packet easily. 
